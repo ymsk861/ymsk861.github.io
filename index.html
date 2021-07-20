@@ -1,27 +1,34 @@
 hello, world!
 
+<head>
+    <script type="text/javascript"> 
+        var submitted = false;
+    </script> 
+</head>
 
 
-<form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScCU8YdoMmtfsP-0aIa2k6p1GTniYhZCaMaIAnpBnmmRKr0uw/formResponse">
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thanks.html';}"></iframe>
+
+<form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScCU8YdoMmtfsP-0aIa2k6p1GTniYhZCaMaIAnpBnmmRKr0uw/formResponse" target=”hidden_iframe” onsubmit=”submitted=true;”>
     <group class="inline-radio">
-      <div><input type="radio" name="785274946_sentinel"><label>橋本優人</label></div>
-      <div><input type="radio" name="785274946_sentinel" checked><label>大藤和希</label></div>
-      <div><input type="radio" name="785274946_sentinel"><label>山崎峻</label></div>
-      <div><input type="radio" name="785274946_sentinel"><label>小泉泰聖</label></div>
-      <div><input type="radio" name="785274946_sentinel"><label>田中哲生</label></div>
-      <div><input type="radio" name="785274946_sentinel"><label>大場健太郎</label></div>
-      <div><input type="radio" name="785274946_sentinel"><label>奥</label></div>
+      <div><input type="radio" name="785274946_sentinel" value="橋本優人"><label>橋本優人</label></div>
+      <div><input type="radio" name="785274946_sentinel" checked　value="大藤和希"><label>大藤和希</label></div>
+      <div><input type="radio" name="785274946_sentinel" value="山崎峻"><label>山崎峻</label></div>
+      <div><input type="radio" name="785274946_sentinel" value="小泉泰聖"><label>小泉泰聖</label></div>
+      <div><input type="radio" name="785274946_sentinel" value="田中哲生"><label>田中哲生</label></div>
+      <div><input type="radio" name="785274946_sentinel" value="大場健太郎"><label>大場健太郎</label></div>
+      <div><input type="radio" name="785274946_sentinel" value="奥"><label>奥</label></div>
     </group>
     <group class="inline-radio">
-      <div><input type="radio" name="884312052_sentinel"><label>達成</label></div>
-      <div><input type="radio" name="884312052_sentinel"><label>一部達成</label></div>
-      <div><input type="radio" name="884312052_sentinel" checked><label>未達成</label></div>
+      <div><input type="radio" name="884312052_sentinel" value="達成"><label>達成</label></div>
+      <div><input type="radio" name="884312052_sentinel" value="一部達成"><label>一部達成</label></div>
+      <div><input type="radio" name="884312052_sentinel" checked value="未達成"><label>未達成</label></div>
     </group>
     <group class="inline-radio">
-      <div><input type="radio" name="545135830_sentinel" checked><label>怪我</label></div>
-      <div><input type="radio" name="545135830_sentinel"><label>体調不良</label></div>
-      <div><input type="radio" name="545135830_sentinel"><label>その他公的な理由(天候不良など)</label></div>
-      <div><input type="radio" name="545135830_sentinel"><label>その他(公的でない理由)</label></div>
+      <div><input type="radio" name="545135830_sentinel" checked value="けが"><label>怪我</label></div>
+      <div><input type="radio" name="545135830_sentinel" value="体調不良"><label>体調不良</label></div>
+      <div><input type="radio" name="545135830_sentinel" value="その他公的な理由(天候不良など)"><label>その他公的な理由(天候不良など)</label></div>
+      <div><input type="radio" name="545135830_sentinel" value="その他(公的でない理由)"><label>その他(公的でない理由)</label></div>
     </group>
     <!-- <group class="inline-radio">
       <div><input type="radio" name="member"><label>Yes</label></div>

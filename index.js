@@ -175,40 +175,40 @@ function update() {
 
     // 西船の画像を表示
     var nishifunaImage = new Image();
-    nishifunaImage.src = "./../images/nishifuna.png";
+    nishifunaImage.src = "./nishifuna.png";
     for (const nishi of nishifuna) {
       ctx.drawImage(nishifunaImage, nishi.x, nishi.y, nishi.w, nishi.h);
     }
 
     // 西船文字の画像を表示
     var ryoImage = new Image();
-    ryoImage.src = "./../images/ryo.png";
+    ryoImage.src = "./ryo.png";
     for (const r of ryo) {
       ctx.drawImage(ryoImage, r.x, r.y, r.w, r.h);
     }
 
     // ロゴの画像を表示
     var logoImage = new Image();
-    logoImage.src = "./../images/logo.png";
+    logoImage.src = "./logo.png";
     for (const l of logo) {
       ctx.drawImage(logoImage, l.x, l.y, l.w, l.h);
     }
   
     // 本社の画像を表示
     var honshaImage = new Image();
-    honshaImage.src = "./../images/honsha.png";
+    honshaImage.src = "./honsha.png";
     for (const hon of honsha) {
       ctx.drawImage(honshaImage, hon.x, hon.y, hon.w, hon.h);
     }
 
   // 主人公の画像を表示
   var image = new Image();
-  image.src = "./../images/character-01/base1.png";
+  image.src = "./base1.png";
   ctx.drawImage(image, x, y, 70, 70);
 
   // 地面の画像を表示
   var groundImage = new Image();
-  groundImage.src = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QC6RXhpZgAATU0AKgAAAAgABgESAAMAAAABAAEAAAEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAExAAIAAAAiAAAAZodpAAQAAAABAAAAiAAAAAAAAABIAAAAAQAAAEgAAAABQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpAAADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAAgoAMABAAAAAEAAAAgAAAAAP/AABEIACAAIAMBEQACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2wBDAAICAgICAgICAgIDAgICAwQDAgIDBAUEBAQEBAUGBQUFBQUFBgYHBwgHBwYJCQoKCQkMDAwMDAwMDAwMDAwMDAz/2wBDAQMDAwUEBQkGBgkNCwkLDQ8ODg4ODw8MDAwMDA8PDAwMDAwMDwwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/3QAEAAT/2gAMAwEAAhEDEQA/APtxnJB4+lfmh9mV3Y+tUhXI1chqYXJvNJ4NQ0M//9D7abgHPWvzQ+zK0hxzmrSJZCGG7/P+FAh4PzVLKR//0ftg5+bPevzQ+zK8n0qyCv0Y0APU5apkUj//0vts/wAX1r83Psyq/XkUIlkWMtQIVVA/z71Mikf/2Q==";
+  groundImage.src = "./base.png";
   for (const block of blocks) {
     ctx.drawImage(groundImage, block.x, block.y, block.w, block.h);
   }

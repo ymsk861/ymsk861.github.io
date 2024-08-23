@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商社マン風ビットマップ生成</title>
+</head>
+<body>
+    <canvas id="businessmanCanvas" width="320" height="320"></canvas>
+    <br>
+    <button id="downloadBtn">PNG形式で保存</button>
+
+    <script>
+        const canvas = document.getElementById('businessmanCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 32x32 商社マン風のビットマップデータ
+        const businessmanBitmap = [
+            // (例として、上部の髪、顔、スーツを表すデータの一部)
+            [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 2, 2, 2, 3, 3, 3, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 3, 3, 3, 2, 2, 2, 1, 0, 0, 0, 0],
+            [0, 0, 1, 2, 2, 2, 3, 4, 4, 4, 3, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 4, 4, 3, 2, 2, 2, 2, 1, 0, 0, 0],
+            // 省略 - 下部のデータも同様に記述
+            [0, 0, 0, 1, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3, 3, 2, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            // 省略
+        ];
+
+        // 色の定義 (RGBA)
+        const colors = {
+            0: 'rgba(255, 255, 255, 0)',  // 透明
+            1: 'rgba(0, 0, 0, 255)',    // 黒 (髪)
+            2: 'rgba(255, 204, 153, 255)', // 肌色 (顔)
+            3: 'rgba(0, 0, 255, 255)',  // 青 (スーツ)
+            4: 'rgba(255, 0, 0, 255)'   // 赤 (ネクタイ)
+        };
+
+        // ピクセルを描画
+        const pixelSize = 10;  // 1ピクセルを10x10に拡大
+        businessmanBitmap.forEach((row, y) => {
+            row.forEach((colorIndex, x) => {
+                ctx.fillStyle = colors[colorIndex];
+                ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+            });
+        });
+
+        // PNGとして保存
+        const downloadBtn = document.getElementById('downloadBtn');
+        downloadBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'businessman_bitmap.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+    </script>
+</body>
+</html>
